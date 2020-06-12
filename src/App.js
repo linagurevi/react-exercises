@@ -19,7 +19,7 @@ import SmartParagraph from './SmartParagraph/SmartParagraph';
 function App() {
   return (
     <div className="App">
-        <div className="exercise" data-number="1" data-title="<Blob />">
+        <div className="exercise" data-number="1" data-title="<Blob />" showLogo={true}>
             <Blob />
         </div>
         <div className="exercise" data-number="2" data-title="<Hide />">

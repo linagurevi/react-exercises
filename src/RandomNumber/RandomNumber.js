@@ -3,6 +3,23 @@ import './RandomNumber.scss';
 
 class RandomNumber extends Component {
 
+	constructor() {
+		super();
+		this.state = {
+			num: 0,
+			showNum: false
+		};
+	}
+
+
+
+	generateNum() {
+		this.setState({
+			num: Math.floor(Math.random() * 1001),
+			showNum: true
+		});
+	}
+
 	render() {
 		return (
 			<div className="RandomNumber">
@@ -10,8 +27,9 @@ class RandomNumber extends Component {
 					When clicking on the button, make a random number (between 1-100) to appear in the box.
 				</p>
 
-				<button>Generate number!</button>
+				<button onClick={this.generateNum.bind(this)}>Generate number!</button>
 				<div className="box">
+				{this.state.showNum ? <p>{this.state.num}</p> : null}
 
 				</div>
 			</div>
